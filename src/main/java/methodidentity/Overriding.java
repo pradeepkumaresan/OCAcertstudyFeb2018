@@ -22,7 +22,7 @@ class Parent {
     return 99;
   }
 
-  protected void silentStuff() {
+  protected void silentStuff() throws IOException {
   }
 
   //  @Override
@@ -69,7 +69,21 @@ class Sub extends Parent {
 //  @Override
 // if less accessible, then attempt
 // to access via Parent reference would fail at runtime!
-  public void silentStuff() throws IOException {}
+  public void silentStuff() {
+    if (Math.random() > 0.5) {
+      try {
+        throw new IOException();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+
+    }
+  }
+/* If I remove throws IOException here..
+A) just fine
+B) compiler fails
+C) possibly fails at runtime?
+ */
 
   // A) make it public?
   // B) make it private?
