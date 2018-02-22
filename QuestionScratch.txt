@@ -1,0 +1,130 @@
+
+
+String s = "Hello";
+
+
+How much storage does variable s use?
+
+    A) None
+    B) 1 Machine Word
+    C) 6 bytes
+    D) 12 bytes
+    E) more than 12 bytes
+
+--------------------------------------------------
+
+Given
+
+int [] a = {1,2}; 
+ 
+and
+
+MyClass { 
+  int a[] = { 1, 2 };
+}
+
+and
+
+new MyClass();
+
+How many objects are created on the heap?
+A) 0
+B) 1
+C) 2
+D) 3
+E) More
+
+--------------------------------------------------
+
+public void q11A(int x) {
+    x = x + 1;
+    q11A(x);
+}
+
+int x = 99;
+q11A(x);
+System.out.println(x);
+
+What is the result?
+    A) 99
+    B) 100
+    C) An error
+
+
+--------------------------------------------------
+
+  public void q12A(StringBuilder x) {
+    x.append(" world");
+  }
+
+    StringBuilder y = new StringBuilder("Other");
+    final StringBuilder x = new StringBuilder("Hello");
+    q12A(x); // not error, even if final.
+    x = y; // ERROR IF x is final
+    x = new StringBuilder("Goodbye'); // ERROR IF final
+    x = null; //ERROR if x is final!!!
+    System.out.println(x);
+
+What is the result?
+    A) Hello
+    B) Hello world
+    C)  world
+    D) An error
+
+--------------------------------------------------
+
+
+  public void q12A(/* final would make the assignment illegal */ StringBuilder x) {
+    x = new StringBuilder("Hello World");
+  }
+
+    final StringBuilder x = new StringBuilder("Hello");
+    q12A(x);
+    System.out.println(x);
+
+What is the result?
+    A) Hello
+    B) Hello world
+    C)  world
+    D) An error
+
+--------------------------------------------------
+
+  public void q13A(int[] x) {
+    x[0] = x[0] + 1;
+  }
+
+    int x[] = {99};
+    q13A(x);
+    System.out.println(x[0]);
+
+What is the result?
+    A) 99
+    B) 100
+    C) An error
+
+// better than mutating your argument would simply be
+public int q13A(int x) {
+  return x + 1;
+}
+
+--------------------------------------------------
+
+  public void q14A(Integer x) {
+    x = x + 1;
+// Integer is immutable
+// equvalent to x = new Integer(x.getValue() + 1)
+  }
+
+    final Integer x = 99;
+    q14A(x);
+    System.out.println(x);
+
+    A) 99
+    B) 100
+    C) An error
+
+--------------------------------------------------
+
+
+

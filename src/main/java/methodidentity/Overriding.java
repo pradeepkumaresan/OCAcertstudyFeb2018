@@ -22,7 +22,7 @@ class Parent {
     return 99;
   }
 
-  protected void silentStuff() throws IOException {
+  protected void silentStuff()/* throws IOException */ {
   }
 
   //  @Override
