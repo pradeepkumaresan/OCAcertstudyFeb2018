@@ -29,6 +29,8 @@ B) parent first, then sub
 class Sub extends Base {
   Sub(int x) {
     // parent constructor WITH ZERO ARGS is default!!!
+    // if our code (in constructor) does not refer to *any* call to super(...)
+    // then the compiler inserts super() <-- i.e. the same as the default
     super(x);
     System.out.println("In subclass constructor");
   }

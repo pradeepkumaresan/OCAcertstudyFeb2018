@@ -1,6 +1,7 @@
 package constructructors;
 
 public class X {
+  private int something = 100;
   private int theValue;
 
   @Override
@@ -13,13 +14,17 @@ public class X {
   }
 
   public X() {
+//    System.out.println("Hello");
     this(40); // call into (but don't create new object) the other matching constructor
+//    this(something); // call to this(xxx) or super(xxx) must be "first" and no instance behavior
+    // is allowed in computing the argument list either!!!
     //    this = new X(40); // NOPE, creates entirely new object
 //    theValue = 40;
     System.out.println("in non-default constructor with zero arg");
   }
 
   public X(int x) {
+    // compiler inserts super() when neither this(...) nor super(...) is coded.
     if (x < 50 || x > 100) throw new IllegalArgumentException("Bad value for x " + x);
     theValue = x;
     System.out.println("in non-default constructor with single int arg");
