@@ -68,5 +68,19 @@ public class Selection {
 //    System.out.println("Lower: " + findStringsWithATest(ls, new LowerStartStringTester()));
     System.out.println("Long: " + findStringsWithATest(ls, (s) -> s.length() > 4));
     System.out.println("Lower: " + findStringsWithATest(ls, (s) -> Character.isLowerCase(s.charAt(0))));
+
+    List<String> shortNames = findStringsWithATest(ls, s -> s.length() < 5);
+    System.out.println("Short: " + shortNames);
+
+    shortNames = findStringsWithATest(ls, (String s) -> s.length() < 5);
+    System.out.println("Short: " + shortNames);
+
+    System.out.println("-------------------------------------------");
+    shortNames = findStringsWithATest(ls, s -> {
+      System.out.println("Testing string " + s + " to see if it is short...");
+      return s.length() < 5;
+    });
+    System.out.println("Short: " + shortNames);
+
   }
 }
