@@ -126,5 +126,59 @@ public int q13A(int x) {
 
 --------------------------------------------------
 
+  class Q27Base {
+    int x = 99;
+  }
+
+  class Q27Sub extends Q27Base {
+    Q27Sub() {
+      super();
+      this(4);
+      System.out.println("in sub constructor, x is " + x);
+    }
+    Q27Sub(int x) {
+      System.out.println("in default constructor, x is " + x);
+    }
+    
+given a call to:
+
+    new Q27Sub()
+
+    What is the result?
+    A) in sub constructor x is 99
+       in default constructor, x is 4
+    B) in sub constructor x is 4
+       in default constructor, x is 4
+    C) in sub constructor x is 99
+       in default constructor, x is 99
+    D) Compilation fails
+    E) An exception is thrown
+
+--------------------------------------------------
+
+Given
+
+String s = new String("Hello");
+String t = new String("Hello");
+String u = s;
+
+s = t;
+s = null;
+
+How many objects are eligible for garbage collection?
+
+A) 0
+B) 1
+C) 2
+D) Indeterminate
+
+
+
+
+
+
+
+
+
 
 
