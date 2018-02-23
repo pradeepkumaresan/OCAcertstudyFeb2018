@@ -172,7 +172,24 @@ B) 1
 C) 2
 D) Indeterminate
 
+--------------------------------------------------
 
+Given
+
+// String s = new String("Hello");
+// String t = new String("Hello");
+
+String s = new String("Hello");
+String t = new String("Hello");
+
+
+SOUT(s == t)
+
+What is the result:
+
+A) true
+B) false
+C) Error?
 
 
 
